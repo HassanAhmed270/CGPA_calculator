@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA CALCULATOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-blue-100">
+
+    <!-- ✅ Navbar -->
+    <nav class="bg-blue-700 shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center bg-blue-800 my-2 border-solid border-4 border-white">
+                    <a href="index.html" class="text-xl font-bold text-white px-4">GPA CALCULATOR</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ✅ Template Selection -->
+    <div class="flex item-center justify-center m-0 text-center bg-blue-100 min-w-full">
+        <div class="temp flex-col">
+            <h1 class="font-bold text-blue-700 text-3xl mt-4 mb-5">Select CGPA Criteria</h1>
+            <div class="templates flex text-large font-bold">
+                <div class="box bg-gray-100 p-5 mr-5 border-4 border-solid border-blue-700">
+                    <img src="img/temp1.png" width="400" height="410" class="hover:opacity-30">
+                    <h2 class="border-4 border-solid border-blue-800 text-blue-700 mt-2">Default Template</h2>
+                </div>
+                <div class="box bg-gray-100 p-5 mr-5 border-4 border-solid border-blue-700">
+                    <img src="img/temp2.png" width="400" height="410" class="hover:opacity-30">
+                    <button class="mt-8 px-8 py-1 text-large text-white my-2 bg-blue-500"
+                        onclick="selectMethod('P')">Select</button>
+                </div>
+            </div>
+            <button type="submit" class="px-8 py-2 font-bold text-large text-white my-2 bg-blue-500 float-left"
+                onclick="selectMethod('I')">Use Default</button>
+        </div>
+    </div>
+
+    <!-- ✅ Main Calculator -->
+    <div class="main hidden justify-center mb-0">
+        <h2 class="text-2xl font-bold text-center mb-6 py-4 my-4">CGPA CALCULATOR</h2>
+        <div class="w-[85%]">
+            <table class="min-w-full text-white font-bold mx-20 bg-blue-300 border-8 border-solid border-white rounded-lg shadow-md">
+                <thead class="bg-blue-700 text-white">
+                    <tr class="hover:bg-gray-500">
+                        <th class="py-3 px-4 border-b">Subject</th>
+                        <th class="py-3 px-4 border-b">Marks</th>
+                        <th class="py-3 px-4 border-b">Credit Hours</th>
+                        <th class="py-3 px-4 border-b">Result</th>
+                        <th class="py-3 px-4 border-b">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tab">
+                    <tr id="BlankRow" class=" text-center hover:bg-gray-500">
+                    </tr>
+                     <tr class="bg-blue-400 text-center hover:bg-gray-500">
+                        <td class="py-2 px-4 border-b cursor-pointer"></td>
+                        <td class="py-2 px-4 border-b cursor-pointer"></td>
+                        <td class="py-2 px-4 border-b cursor-pointer">Click to Add New </td>
+                        <td class="py-2 px-4 border-b font-semibold"></td>
+                        <td class="py-2 px-4 border-b"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="calCGPA mx-16 mt-5 text-large" id="ccgpa">
+                <button class="py-2 px-4 bg-blue-500 text-white font-bold my-3"
+                    onclick="calCGPA()">Calculate CGPA</button>
+                <h3 class="display hidden">4.0</h3>
+            </div>
+
+            <div class="container w-full flex top-0 justify-center hidden ml-24 mt-0">
+                <div class="form w-[30%]">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" placeholder="Subject Name"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Marks</label>
+                        <input type="text" id="marks" placeholder="Marks"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Credit Hours</label>
+                        <input type="text" id="credit" placeholder="Credit Hours"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">GPA</label>
+                        <input type="text" id="overall" placeholder="Overall"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <button class="py-1 px-3 bg-blue-500 text-white" onclick="addToTable()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

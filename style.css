@@ -1,0 +1,19 @@
+/* Custom Styles Beyond Tailwind */
+
+/* Table hover effect */
+table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Image hover fade */
+img.hover\:opacity-30:hover {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* Custom button hover */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
